@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+
+        {% set mensagem = get_flashed_messages() %}
+    
+        {% if mensagem %}
+    
+        {% endif %}
+
+    <div id="form_fundo">
+        <div id="form_frente">
+            <h1>Login</h1>
+            <form action="/login" id="login" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" required placeholder="Digite seu nome">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required placeholder="Digite sua senha">
+            <button type="submit" id="btn_login">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>Entrar
+            </button>
+                <a href="{{url_for('register')}}">Não tem uma conta? Cadastre-se</a>
+                    <div class="flash_alerta">
+                        {{ mensagem[0] }}
+                    </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<style>
+    
+    @charset "UTF-8";
+
+    body {
+        background-color: #c9c8c5;
+        font-family: Arial;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    div #form_fundo {
+        background-color: blue;
+        margin: 10% 25% 25% 25%;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 8px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    div #form_frente {
+        background-color: white;
+        font-family: Arial;
+        font-size: 14px;
+        margin: 10px;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: bold;
+        padding: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    div .flash_alerta {
+        color: red;
+        font-family: Impact;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style> 
+
+
+</html>
